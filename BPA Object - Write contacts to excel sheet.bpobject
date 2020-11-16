@@ -1,0 +1,100 @@
+﻿<process name="Write contacts to excel sheet" version="1.0" bpversion="6.9.0.26970" narrative="Working with Database and performng operations on it." byrefcollection="true" type="object" runmode="Exclusive" preferredid="39390b01-dbac-496c-b5d8-6d99a926989a">
+  <appdef>
+    <element name="Application Root">
+      <id>31e84faa-d6cf-4acd-b982-19b0fd1c9d32</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="c7b525f4-e943-463d-a5f7-bfa87217ad71" name="Write contacts to excel sheet" type="SubSheetInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="379fb079-e46d-486a-a38e-e421622d4b3c" name="Start" type="Start">
+    <loginhibit />
+    <display x="-15" y="-195" />
+    <onsuccess>c51bd2e4-8d57-41d0-b110-31baa41ced7e</onsuccess>
+  </stage>
+  <stage stageid="7834a7d2-4d62-4e35-a9a3-818c907e1f2d" name="End" type="End">
+    <loginhibit />
+    <display x="-15" y="135" />
+  </stage>
+  <stage stageid="c51bd2e4-8d57-41d0-b110-31baa41ced7e" name="MS Excel VBO::Create Instance" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-135" />
+    <inputs>
+      <input type="flag" name="Enable Events" friendlyname="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="handle" />
+    </outputs>
+    <onsuccess>34f12e86-5e16-458b-93de-9ea93393862a</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="34f12e86-5e16-458b-93de-9ea93393862a" name="MS Excel VBO::Open Workbook" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-75" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Administrator\Desktop\AddressBook Data.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
+    </outputs>
+    <onsuccess>546b36ee-6747-46b9-80df-7173eee98d89</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="1aa13ede-628f-453f-b324-e846ef856367" name="MS Excel VBO::Write Collection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="15" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the specified collection should be written. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook within which the data should be written. The default empty value indicates the current workbook within the specified instance." expr="[Workbook Name]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet on which the given data should be written. The default empty value indicates the current sheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection containing the data which should be written to the worksheet." expr="[Results]" />
+      <input type="text" name="Cell Reference" friendlyname="Cell Reference" narrative="The reference at which the collection should be written." expr="&quot;A1&quot;" />
+      <input type="flag" name="Include Column Names" friendlyname="Include Column Names" narrative="True to indicate that the column names from the collection should be written out as the first row; False to ignore the column names and just write out the data." expr="True" />
+    </inputs>
+    <onsuccess>aff26142-0de2-4437-804e-57c546df71bd</onsuccess>
+    <resource object="MS Excel VBO" action="Write Collection" />
+  </stage>
+  <stage stageid="aff26142-0de2-4437-804e-57c546df71bd" name="MS Excel VBO::Close Workbook" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="75" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the workbook which should be closed resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which should be closed." expr="[Workbook Name]" />
+      <input type="flag" name="Save Data" friendlyname="Save Data" narrative="True to save the data before closing the workbook; The default of False will discard any changes before closing the workbook." expr="True" />
+    </inputs>
+    <onsuccess>7834a7d2-4d62-4e35-a9a3-818c907e1f2d</onsuccess>
+    <resource object="MS Excel VBO" action="Close Workbook" />
+  </stage>
+  <stage stageid="fa463573-31b5-4826-a827-5d18b8fb13cc" name="handle" type="Data">
+    <display x="60" y="-135" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e1d3a40b-9e41-4030-b3b0-61a469fc3fb8" name="Workbook Name" type="Data">
+    <display x="60" y="-75" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="546b36ee-6747-46b9-80df-7173eee98d89" name="Get All contacts" type="SubSheet">
+    <loginhibit />
+    <display x="-15" y="-30" />
+    <onsuccess>1aa13ede-628f-453f-b324-e846ef856367</onsuccess>
+    <processid>bea50349-9dc2-469a-9f88-d1769509a79c</processid>
+  </stage>
+</process>

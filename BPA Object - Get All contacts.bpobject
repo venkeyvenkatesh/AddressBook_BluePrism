@@ -1,0 +1,75 @@
+﻿<process name="Get All contacts" version="1.0" bpversion="6.9.0.26970" narrative="Working with Database and performng operations on it." byrefcollection="true" type="object" runmode="Exclusive" preferredid="39390b01-dbac-496c-b5d8-6d99a926989a">
+  <appdef>
+    <element name="Application Root">
+      <id>31e84faa-d6cf-4acd-b982-19b0fd1c9d32</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="6d96797f-ed52-41c5-9ade-c999e3a1ec29" name="Get All contacts" type="SubSheetInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="fbbaa2bc-d60c-4d34-8aff-c89c6832e2d8" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>0f9dcffb-cc46-48f6-b0d6-a66171014fbf</onsuccess>
+  </stage>
+  <stage stageid="898982bb-b5d4-4145-816a-551f13a03a60" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="120" />
+  </stage>
+  <stage stageid="0f9dcffb-cc46-48f6-b0d6-a66171014fbf" name="Data - SQL Server::Set Connection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>25c5789c-5a08-4472-992e-444536b3ef7b</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="25c5789c-5a08-4472-992e-444536b3ef7b" name="Data - SQL Server::Get Collection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" w="90" h="60" />
+    <inputs>
+      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;Select * from AddressBook&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+      <output type="collection" name="Results" friendlyname="Results" narrative="The collection of results from the query" stage="Results" />
+    </outputs>
+    <onsuccess>898982bb-b5d4-4145-816a-551f13a03a60</onsuccess>
+    <resource object="Data - SQL Server" action="Get Collection" />
+  </stage>
+  <stage stageid="e8341aef-c1d4-4cba-8dc0-e4ce830f08a7" name="Results" type="Collection">
+    <display x="180" y="-60" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+  </stage>
+  <stage stageid="d2660ec5-31ef-4528-8454-678b2f16cb67" name="Message" type="Data">
+    <display x="285" y="-90" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="905a296e-7b7f-46da-a75a-1e3b1f50f1d5" name="Success" type="Data">
+    <display x="285" y="-30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

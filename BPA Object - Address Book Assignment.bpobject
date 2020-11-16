@@ -1,0 +1,658 @@
+﻿<process name="Address Book Assignment" version="1.0" bpversion="6.9.0.26970" narrative="Working with Database and performng operations on it." byrefcollection="true" type="object" runmode="Exclusive" preferredid="39390b01-dbac-496c-b5d8-6d99a926989a">
+  <appdef>
+    <element name="Application Root">
+      <id>31e84faa-d6cf-4acd-b982-19b0fd1c9d32</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="3104b60b-7b92-4ffd-ae2d-34fabdfe14a4" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="6f96dd42-9f57-41de-8e3d-42de907f0841" type="Normal" published="False">
+    <name>Insert Into Database</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-42</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="df178edd-0c61-4523-ade9-e2819dd19cb1" type="Normal" published="False">
+    <name>Update Some Row</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="de0b33c3-378e-44f4-8f4d-ca5919afbded" type="Normal" published="False">
+    <name>Delete Some Row</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-21</cameray>
+      <zoom version="2">1.875</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="bea50349-9dc2-469a-9f88-d1769509a79c" type="Normal" published="False">
+    <name>Get All contacts</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>63</cameray>
+      <zoom version="2">1.5625</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b" type="Normal" published="False">
+    <name>Write contacts to excel sheet</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-42</cameray>
+      <zoom version="2">1.875</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="64a62910-b6e9-4a09-8d61-198ece51df91" type="Normal" published="False">
+    <name>Check for duplicates</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>189</cameray>
+      <zoom version="2">1.875</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="2bea3f32-221c-495b-b1b0-cf0d992761c7" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>dce4c094-1554-4506-9258-d5cce4d0408c</onsuccess>
+  </stage>
+  <stage stageid="dce4c094-1554-4506-9258-d5cce4d0408c" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="8edc8830-c023-44bd-9a84-72f3a87390df" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="b48d029c-2f40-48a6-8366-9d81b4847146" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>3104b60b-7b92-4ffd-ae2d-34fabdfe14a4</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="df29547f-478f-4757-99a7-8557ece36b39" name="Start" type="Start">
+    <subsheetid>3104b60b-7b92-4ffd-ae2d-34fabdfe14a4</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>d997f0f6-ba5a-4db6-9ef0-15cee8093172</onsuccess>
+  </stage>
+  <stage stageid="d997f0f6-ba5a-4db6-9ef0-15cee8093172" name="End" type="End">
+    <subsheetid>3104b60b-7b92-4ffd-ae2d-34fabdfe14a4</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="abf5a0c0-31c6-49fa-93fd-a94a38ac7e10" name="Insert Into Database" type="SubSheetInfo">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="f681e87c-b996-4c4d-a7e7-990e4d9f0add" name="Start" type="Start">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>53cb183c-5c31-4f27-884d-6c65110893ae</onsuccess>
+  </stage>
+  <stage stageid="fd174201-f678-446c-b077-c4fd5979e8a2" name="End" type="End">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="ce0000f0-601d-4eac-9cc5-32dca7554901" name="" type="Note">
+    <subsheetid>3104b60b-7b92-4ffd-ae2d-34fabdfe14a4</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="912023b7-59fc-41c8-9c8d-72c5973b82db" name="" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="92fa95d4-15c9-406a-b7d3-1889910ed2d5" name="Data - SQL Server::Execute" type="Action">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into AddressBook values('kiran','maricherla','Mirthipadu',&#xA;'RJY','AP',533293,'+91 9876543210','kiran@gmail.com');&quot;&#xA;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>fd174201-f678-446c-b077-c4fd5979e8a2</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="584be200-34ca-4eb7-9f1a-17d23fc34711" name="Message" type="Data">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <display x="225" y="-150" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="69600c6b-4cc4-417a-8642-b8ac7efabf25" name="Success" type="Data">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <display x="330" y="-150" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="53cb183c-5c31-4f27-884d-6c65110893ae" name="Data - SQL Server::Set Connection" type="Action">
+    <subsheetid>6f96dd42-9f57-41de-8e3d-42de907f0841</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>92fa95d4-15c9-406a-b7d3-1889910ed2d5</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="a59bc04f-b53e-437e-8f04-e43515b0e781" name="Update Some Row" type="SubSheetInfo">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="46d7142f-ab56-4865-a540-74354926c720" name="Start" type="Start">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>4c641b65-2607-4849-80bf-9c6531eb37e7</onsuccess>
+  </stage>
+  <stage stageid="0c4c88fa-b79e-4292-8b4c-7d74521ceefe" name="End" type="End">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="634a84ff-1c98-42c0-a09c-c0d1fc4a338e" name="Data - SQL Server::Execute" type="Action">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;update AddressBook set LastName='padipati' where FirstName='prakash';&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>0c4c88fa-b79e-4292-8b4c-7d74521ceefe</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="4c641b65-2607-4849-80bf-9c6531eb37e7" name="Data - SQL Server::Set Connection" type="Action">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>634a84ff-1c98-42c0-a09c-c0d1fc4a338e</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="8ba8e1bb-c85b-4099-bc46-d99fbe698297" name="Message" type="Data">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <display x="90" y="15" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c0baa705-e863-4745-91af-38d74626097d" name="Success" type="Data">
+    <subsheetid>df178edd-0c61-4523-ade9-e2819dd19cb1</subsheetid>
+    <display x="-60" y="15" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="74c31c13-14a0-4f44-b632-2dd059bdb614" name="Delete Some Row" type="SubSheetInfo">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="46486844-5691-4bcb-88a8-8dc39ae53c11" name="Start" type="Start">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>07afcf8c-655c-4362-bcf6-c5fda52baaca</onsuccess>
+  </stage>
+  <stage stageid="3ac6d16b-c906-407c-bf27-be3bac26d6ae" name="End" type="End">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="07afcf8c-655c-4362-bcf6-c5fda52baaca" name="Data - SQL Server::Set Connection" type="Action">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>aca4dd13-6347-4f4a-ba32-766c5aff59db</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="aca4dd13-6347-4f4a-ba32-766c5aff59db" name="Data - SQL Server::Execute" type="Action">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;delete FROM AddressBook where FirstName='&quot;&amp;[FirstName]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>3ac6d16b-c906-407c-bf27-be3bac26d6ae</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="f4c00897-52a6-4aed-878e-27286ec1e6e9" name="Message" type="Data">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <display x="90" y="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b22c6eba-94de-47b8-802f-10b74eccdff5" name="Success" type="Data">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <display x="-60" y="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="95042b2f-c366-469e-9983-30887edf64e5" name="FirstName" type="Data">
+    <subsheetid>de0b33c3-378e-44f4-8f4d-ca5919afbded</subsheetid>
+    <loginhibit />
+    <display x="-210" y="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">rohith</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6d96797f-ed52-41c5-9ade-c999e3a1ec29" name="Get All contacts" type="SubSheetInfo">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="fbbaa2bc-d60c-4d34-8aff-c89c6832e2d8" name="Start" type="Start">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>0f9dcffb-cc46-48f6-b0d6-a66171014fbf</onsuccess>
+  </stage>
+  <stage stageid="898982bb-b5d4-4145-816a-551f13a03a60" name="End" type="End">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <loginhibit />
+    <display x="15" y="120" />
+  </stage>
+  <stage stageid="0f9dcffb-cc46-48f6-b0d6-a66171014fbf" name="Data - SQL Server::Set Connection" type="Action">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>25c5789c-5a08-4472-992e-444536b3ef7b</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="25c5789c-5a08-4472-992e-444536b3ef7b" name="Data - SQL Server::Get Collection" type="Action">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" w="90" h="60" />
+    <inputs>
+      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;Select * from AddressBook&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+      <output type="collection" name="Results" friendlyname="Results" narrative="The collection of results from the query" stage="Results" />
+    </outputs>
+    <onsuccess>898982bb-b5d4-4145-816a-551f13a03a60</onsuccess>
+    <resource object="Data - SQL Server" action="Get Collection" />
+  </stage>
+  <stage stageid="e8341aef-c1d4-4cba-8dc0-e4ce830f08a7" name="Results" type="Collection">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <display x="180" y="-60" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+  </stage>
+  <stage stageid="d2660ec5-31ef-4528-8454-678b2f16cb67" name="Message" type="Data">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <display x="285" y="-90" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="905a296e-7b7f-46da-a75a-1e3b1f50f1d5" name="Success" type="Data">
+    <subsheetid>bea50349-9dc2-469a-9f88-d1769509a79c</subsheetid>
+    <display x="285" y="-30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c7b525f4-e943-463d-a5f7-bfa87217ad71" name="Write contacts to excel sheet" type="SubSheetInfo">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="379fb079-e46d-486a-a38e-e421622d4b3c" name="Start" type="Start">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-195" />
+    <onsuccess>c51bd2e4-8d57-41d0-b110-31baa41ced7e</onsuccess>
+  </stage>
+  <stage stageid="7834a7d2-4d62-4e35-a9a3-818c907e1f2d" name="End" type="End">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit />
+    <display x="-15" y="135" />
+  </stage>
+  <stage stageid="c51bd2e4-8d57-41d0-b110-31baa41ced7e" name="MS Excel VBO::Create Instance" type="Action">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-135" />
+    <inputs>
+      <input type="flag" name="Enable Events" friendlyname="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="handle" />
+    </outputs>
+    <onsuccess>34f12e86-5e16-458b-93de-9ea93393862a</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="34f12e86-5e16-458b-93de-9ea93393862a" name="MS Excel VBO::Open Workbook" type="Action">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-75" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Administrator\Desktop\AddressBook Data.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
+    </outputs>
+    <onsuccess>546b36ee-6747-46b9-80df-7173eee98d89</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="1aa13ede-628f-453f-b324-e846ef856367" name="MS Excel VBO::Write Collection" type="Action">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="15" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the specified collection should be written. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook within which the data should be written. The default empty value indicates the current workbook within the specified instance." expr="[Workbook Name]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet on which the given data should be written. The default empty value indicates the current sheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection containing the data which should be written to the worksheet." expr="[Results]" />
+      <input type="text" name="Cell Reference" friendlyname="Cell Reference" narrative="The reference at which the collection should be written." expr="&quot;A1&quot;" />
+      <input type="flag" name="Include Column Names" friendlyname="Include Column Names" narrative="True to indicate that the column names from the collection should be written out as the first row; False to ignore the column names and just write out the data." expr="True" />
+    </inputs>
+    <onsuccess>aff26142-0de2-4437-804e-57c546df71bd</onsuccess>
+    <resource object="MS Excel VBO" action="Write Collection" />
+  </stage>
+  <stage stageid="aff26142-0de2-4437-804e-57c546df71bd" name="MS Excel VBO::Close Workbook" type="Action">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="75" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the workbook which should be closed resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which should be closed." expr="[Workbook Name]" />
+      <input type="flag" name="Save Data" friendlyname="Save Data" narrative="True to save the data before closing the workbook; The default of False will discard any changes before closing the workbook." expr="True" />
+    </inputs>
+    <onsuccess>7834a7d2-4d62-4e35-a9a3-818c907e1f2d</onsuccess>
+    <resource object="MS Excel VBO" action="Close Workbook" />
+  </stage>
+  <stage stageid="fa463573-31b5-4826-a827-5d18b8fb13cc" name="handle" type="Data">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <display x="60" y="-135" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e1d3a40b-9e41-4030-b3b0-61a469fc3fb8" name="Workbook Name" type="Data">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <display x="60" y="-75" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="546b36ee-6747-46b9-80df-7173eee98d89" name="Get All contacts" type="SubSheet">
+    <subsheetid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-30" />
+    <onsuccess>1aa13ede-628f-453f-b324-e846ef856367</onsuccess>
+    <processid>bea50349-9dc2-469a-9f88-d1769509a79c</processid>
+  </stage>
+  <stage stageid="fd7f004a-57e8-4853-9bf5-a4abe8d8406a" name="Check for duplicates" type="SubSheetInfo">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="01ce8473-9a00-40c4-ab44-bdd52fc188a6" name="Start" type="Start">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-165" />
+    <onsuccess>70b878b8-2a24-46c2-becf-5b9fc47489b0</onsuccess>
+  </stage>
+  <stage stageid="0ac494cd-22f8-4bed-8395-85d4986f65cf" name="End" type="End">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="-15" y="315" />
+  </stage>
+  <stage stageid="70b878b8-2a24-46c2-becf-5b9fc47489b0" name="MS Excel VBO::Create Instance" type="Action">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-105" />
+    <inputs>
+      <input type="flag" name="Enable Events" friendlyname="Enable Events" narrative="Flag to indicate that events should be enabled / disabled on the attached instance - defaulted to True" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="An integer which can be used to identify the created instance in subsequent actions" stage="handle" />
+    </outputs>
+    <onsuccess>7fa91416-aaa7-4b9b-bea1-70290a588481</onsuccess>
+    <resource object="MS Excel VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="95b4e357-f4f6-464a-b17e-e68c6afbdeab" name="MS Excel VBO::Get Worksheet As Collection" type="Action">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="0" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the worksheet which should be retrieved resides. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name of the workbook which contains the sheet required. The default empty text indicates the currently active workbook on the specified instance." expr="[Workbook Name]" />
+      <input type="text" name="Worksheet Name" friendlyname="Worksheet Name" narrative="The name of the worksheet within the specified workbook which should be written to a collection. The default empty text indicates the currently active worksheet within the specified workbook." expr="&quot;Sheet1&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" narrative="The collection containing the data from the specified worksheet - the column IDs will be gleaned from the first row on the sheet being retrieved." stage="Data" />
+    </outputs>
+    <onsuccess>bf16dd9a-bf15-42ff-a27c-eef9c9b3775f</onsuccess>
+    <resource object="MS Excel VBO" action="Get Worksheet As Collection" />
+  </stage>
+  <stage stageid="3dc4cb99-5db5-405b-a64f-1fea836a69a4" name="handle" type="Data">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="90" y="-105" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7fa91416-aaa7-4b9b-bea1-70290a588481" name="MS Excel VBO::Open Workbook" type="Action">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-60" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The integer handle identifying the instance on which the required workbook should be opened. The default of zero indicates the currently active instance." expr="[handle]" />
+      <input type="text" name="File name" friendlyname="File name" narrative="The path and name of the file which should be opened." expr="&quot;C:\Users\Administrator\Desktop\New AddressBook Data.xlsx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Workbook Name" friendlyname="Workbook Name" narrative="The name used by Excel to identify the workbook - usually this is the file name (without the path)." stage="Workbook Name" />
+    </outputs>
+    <onsuccess>95b4e357-f4f6-464a-b17e-e68c6afbdeab</onsuccess>
+    <resource object="MS Excel VBO" action="Open Workbook" />
+  </stage>
+  <stage stageid="63b0ad80-a9e6-4d33-af41-935f070f233b" name="Workbook Name" type="Data">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="90" y="-60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="42421ef2-3821-434b-8835-fd0a990b4605" name="Data" type="Collection">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="90" y="0" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bf16dd9a-bf15-42ff-a27c-eef9c9b3775f" name="Get All contacts" type="SubSheet">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="-15" y="60" />
+    <onsuccess>a514b464-f934-4d3b-8c31-2f25bbf15e52</onsuccess>
+    <processid>bea50349-9dc2-469a-9f88-d1769509a79c</processid>
+  </stage>
+  <stage stageid="a514b464-f934-4d3b-8c31-2f25bbf15e52" name="Loop Start1" type="LoopStart">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="120" y="60" />
+    <onsuccess>cb8bd3a7-5bf2-4118-82b8-64027011674d</onsuccess>
+    <groupid>27fc80bd-3138-4b76-af8f-30de203cf6da</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Data</loopdata>
+  </stage>
+  <stage stageid="1b3b24ac-c594-412d-9073-0d53d1cfaa74" name="Loop End1" type="LoopEnd">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="225" y="315" />
+    <onsuccess>9d03374a-3627-4f62-b382-834d471f21a4</onsuccess>
+    <groupid>27fc80bd-3138-4b76-af8f-30de203cf6da</groupid>
+  </stage>
+  <stage stageid="9dd30ede-8a3c-4913-a3f2-8ca5285c0c0e" name="Loop Start2" type="LoopStart">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="120" y="165" />
+    <onsuccess>f29a9831-05b3-4433-89b2-bea6c15414f1</onsuccess>
+    <groupid>3b8c8f5c-b3d8-450e-84be-f25e92ede02a</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Results</loopdata>
+  </stage>
+  <stage stageid="b9b7f078-70cf-41bb-8a4e-8213690ac7a8" name="Loop End2" type="LoopEnd">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="225" y="210" />
+    <onsuccess>678a41a6-7209-4b81-92d7-03ef175bb6f7</onsuccess>
+    <groupid>3b8c8f5c-b3d8-450e-84be-f25e92ede02a</groupid>
+  </stage>
+  <stage stageid="cb8bd3a7-5bf2-4118-82b8-64027011674d" name="Are Null?" type="Decision">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="120" y="120" />
+    <decision expression="[Data.FirstName] &lt;&gt; &quot;&quot;AND&#xA;[Data.LastName] &lt;&gt; &quot;&quot;AND&#xA;[Data.Address] &lt;&gt; &quot;&quot;AND&#xA;[Data.State] &lt;&gt; &quot;&quot;AND&#xA;[Data.City] &lt;&gt; &quot;&quot;AND&#xA;[Data.Zip] &lt;&gt; &quot;&quot;AND&#xA;[Data.PhoneNumber] &lt;&gt; &quot;&quot;AND&#xA;[Data.Email] &lt;&gt; &quot;&quot;" />
+    <ontrue>9dd30ede-8a3c-4913-a3f2-8ca5285c0c0e</ontrue>
+    <onfalse>cc4b47d9-4667-4a8b-9ba3-9971f3a946ed</onfalse>
+  </stage>
+  <stage stageid="cc4b47d9-4667-4a8b-9ba3-9971f3a946ed" name="Exception1" type="Exception">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="-15" y="120" />
+    <exception localized="yes" type="Bussiness Exception" detail="&quot;Null values Given&quot;" />
+  </stage>
+  <stage stageid="f29a9831-05b3-4433-89b2-bea6c15414f1" name="Duplicate Check" type="Decision">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="120" y="210" />
+    <decision expression="[Results.FirstName] &lt;&gt; [Data.FirstName]" />
+    <ontrue>b9b7f078-70cf-41bb-8a4e-8213690ac7a8</ontrue>
+    <onfalse>a71f06e9-f7b5-4213-b975-a46d1eefca1e</onfalse>
+  </stage>
+  <stage stageid="a71f06e9-f7b5-4213-b975-a46d1eefca1e" name="Exception2" type="Exception">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="-15" y="210" />
+    <exception localized="yes" type="Bussiness Exception" detail="&quot;Duplicate Values Encountered&quot;" />
+  </stage>
+  <stage stageid="26b38608-12a7-4fe6-a7d2-2ec8b39adcd2" name="Message" type="Data">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="375" y="90" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="411d9706-645a-47fe-8369-a8c89492c809" name="Success" type="Data">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <display x="375" y="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="678a41a6-7209-4b81-92d7-03ef175bb6f7" name="Data - SQL Server::Execute" type="Action">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="270" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into AddressBook&#xA; values(&#xA;'&quot;&amp;[Data.FirstName]&amp;&quot;',&#xA;'&quot;&amp;[Data.LastName]&amp;&quot;',&#xA;'&quot;&amp;[Data.Address]&amp;&quot;',&#xA;'&quot;&amp;[Data.City]&amp;&quot;',&#xA;'&quot;&amp;[Data.State]&amp;&quot;',&#xA;'&quot;&amp;[Data.Zip]&amp;&quot;',&#xA;'&quot;&amp;[Data.PhoneNumber]&amp;&quot;',&#xA;'&quot;&amp;[Data.Email]&amp;&quot;'&#xA;)&quot;&#xA;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>1b3b24ac-c594-412d-9073-0d53d1cfaa74</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="9d03374a-3627-4f62-b382-834d471f21a4" name="Write contacts to excel sheet" type="SubSheet">
+    <subsheetid>64a62910-b6e9-4a09-8d61-198ece51df91</subsheetid>
+    <loginhibit />
+    <display x="105" y="315" />
+    <onsuccess>0ac494cd-22f8-4bed-8395-85d4986f65cf</onsuccess>
+    <processid>99b3bd2b-709d-44ed-aeaa-4a796c4b1f4b</processid>
+  </stage>
+</process>

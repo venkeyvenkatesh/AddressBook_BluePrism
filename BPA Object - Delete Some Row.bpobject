@@ -1,0 +1,77 @@
+﻿<process name="Delete Some Row" version="1.0" bpversion="6.9.0.26970" narrative="Working with Database and performng operations on it." byrefcollection="true" type="object" runmode="Exclusive" preferredid="39390b01-dbac-496c-b5d8-6d99a926989a">
+  <appdef>
+    <element name="Application Root">
+      <id>31e84faa-d6cf-4acd-b982-19b0fd1c9d32</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="74c31c13-14a0-4f44-b632-2dd059bdb614" name="Delete Some Row" type="SubSheetInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="46486844-5691-4bcb-88a8-8dc39ae53c11" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>07afcf8c-655c-4362-bcf6-c5fda52baaca</onsuccess>
+  </stage>
+  <stage stageid="3ac6d16b-c906-407c-bf27-be3bac26d6ae" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="07afcf8c-655c-4362-bcf6-c5fda52baaca" name="Data - SQL Server::Set Connection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>aca4dd13-6347-4f4a-ba32-766c5aff59db</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="aca4dd13-6347-4f4a-ba32-766c5aff59db" name="Data - SQL Server::Execute" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;delete FROM AddressBook where FirstName='&quot;&amp;[FirstName]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>3ac6d16b-c906-407c-bf27-be3bac26d6ae</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="f4c00897-52a6-4aed-878e-27286ec1e6e9" name="Message" type="Data">
+    <display x="90" y="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b22c6eba-94de-47b8-802f-10b74eccdff5" name="Success" type="Data">
+    <display x="-60" y="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="95042b2f-c366-469e-9983-30887edf64e5" name="FirstName" type="Data">
+    <loginhibit />
+    <display x="-210" y="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">rohith</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

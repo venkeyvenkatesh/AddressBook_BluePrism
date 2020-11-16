@@ -1,0 +1,69 @@
+﻿<process name="Insert Into Database" version="1.0" bpversion="6.9.0.26970" narrative="Working with Database and performng operations on it." byrefcollection="true" type="object" runmode="Exclusive" preferredid="39390b01-dbac-496c-b5d8-6d99a926989a">
+  <appdef>
+    <element name="Application Root">
+      <id>31e84faa-d6cf-4acd-b982-19b0fd1c9d32</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="abf5a0c0-31c6-49fa-93fd-a94a38ac7e10" name="Insert Into Database" type="SubSheetInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="f681e87c-b996-4c4d-a7e7-990e4d9f0add" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>53cb183c-5c31-4f27-884d-6c65110893ae</onsuccess>
+  </stage>
+  <stage stageid="fd174201-f678-446c-b077-c4fd5979e8a2" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="92fa95d4-15c9-406a-b7d3-1889910ed2d5" name="Data - SQL Server::Execute" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;insert into AddressBook values('kiran','maricherla','Mirthipadu',&#xA;'RJY','AP',533293,'+91 9876543210','kiran@gmail.com');&quot;&#xA;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>fd174201-f678-446c-b077-c4fd5979e8a2</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="584be200-34ca-4eb7-9f1a-17d23fc34711" name="Message" type="Data">
+    <display x="225" y="-150" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="69600c6b-4cc4-417a-8642-b8ac7efabf25" name="Success" type="Data">
+    <display x="330" y="-150" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="53cb183c-5c31-4f27-884d-6c65110893ae" name="Data - SQL Server::Set Connection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>92fa95d4-15c9-406a-b7d3-1889910ed2d5</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+</process>

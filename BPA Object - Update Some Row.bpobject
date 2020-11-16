@@ -1,0 +1,69 @@
+﻿<process name="Update Some Row" version="1.0" bpversion="6.9.0.26970" narrative="Working with Database and performng operations on it." byrefcollection="true" type="object" runmode="Exclusive" preferredid="39390b01-dbac-496c-b5d8-6d99a926989a">
+  <appdef>
+    <element name="Application Root">
+      <id>31e84faa-d6cf-4acd-b982-19b0fd1c9d32</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="a59bc04f-b53e-437e-8f04-e43515b0e781" name="Update Some Row" type="SubSheetInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="46d7142f-ab56-4865-a540-74354926c720" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>4c641b65-2607-4849-80bf-9c6531eb37e7</onsuccess>
+  </stage>
+  <stage stageid="0c4c88fa-b79e-4292-8b4c-7d74521ceefe" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="634a84ff-1c98-42c0-a09c-c0d1fc4a338e" name="Data - SQL Server::Execute" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;update AddressBook set LastName='padipati' where FirstName='prakash';&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>0c4c88fa-b79e-4292-8b4c-7d74521ceefe</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="4c641b65-2607-4849-80bf-9c6531eb37e7" name="Data - SQL Server::Set Connection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;(Localdb)\BluePrismLocalDB&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;venkeyDB&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>634a84ff-1c98-42c0-a09c-c0d1fc4a338e</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="8ba8e1bb-c85b-4099-bc46-d99fbe698297" name="Message" type="Data">
+    <display x="90" y="15" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c0baa705-e863-4745-91af-38d74626097d" name="Success" type="Data">
+    <display x="-60" y="15" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
